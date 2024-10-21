@@ -123,5 +123,6 @@ class CarlaConnectDockWidget(QtWidgets.QDockWidget, FORM_CLASS):
         '''
         ImageProcessor.destroy_all_window()
         if self._scenario_runner_process.poll() is None:
+            self._scenario_runner_process.communicate()
             self._scenario_runner_process.kill()
             self._scenario_runner_process.communicate()
